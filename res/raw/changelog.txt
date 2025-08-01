@@ -20,6 +20,10 @@
     </style>
   </head>
   <body>
+$ 10.7b
+  % Version 10.7b
+  _ 2025-08-01
+    * Removed AmbilWarna color picker
 $ 10.7
   % Version 10.7
   _ 2013-09-01

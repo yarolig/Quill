@@ -1,8 +1,48 @@
 android-quill
 =============
+This is an attempt to rewive Quill. An old good but abandoned handwriting app.
+
+
+To build this app you might need:
+- Apache ANT `sudo apt install ant`
+- Old Android SDK with Ant support. Replicant SDK [replicant-sdk_linux-x86.zip](https://redmine.replicant.us/projects/replicant/wiki/ReplicantSDK) works fine. Alternatively you may try manually downloading [old tools](https://dl.google.com/android/repository/tools_r25.2.5-linux.zip)
+- JDK may need replacement. I have used [jdk1.8.0_301](https://www.oracle.com/es/java/technologies/javase/javase8-archive-downloads.html)
+- FilePicker library
+- I can't get [AmbilWarna](https://github.com/yukuku/ambilwarna) to work. So it is not needed.
+
+
+Try to run this to compile:
+```
+RSDK=/path/to/replicant-sdk_linux-x86
+OJDK=/path/to/jdk1.8.0_301
+
+mkdir QuillBuild
+cd QuillBuild
+
+git clone https://github.com/msoftware/android-file-picker AndroidFilePicker
+git clone https://github.com/yarolig/Quill Quill
+
+ANDROID_HOME=$RSDK $RSDK/tools/android update project -p . -t android-17  --subprojects
+
+cd Quill
+JAVA_HOME=$OJDK ant debug
+```
+
+Now you can install 
+```
+adb install ./bin/QuillWriterActivity-debug.apk
+```
+You need to remove the old Quill if it is installed.
+
+If you see this error, you need to change JDK:
+```
+    [javac] error: Source option 5 is no longer supported. Use 6 or later.
+    [javac] error: Target option 1.5 is no longer supported. Use 1.6 or later.
+```
 
 ### Handwriting note-taking app for Android tablets
-**[Forked/Exported from code.google.com/p/android-quill]**
+The code was forked from code.google.com/p/android-quill.
+Then imported from f-droid project and https://github.com/ryanamaral/android-quill
 
 A key design goal is quick response to pen strokes and 100% vector graphics. Developed on a Lenovo ThinkPad Tablet and a Galaxy Note.
 

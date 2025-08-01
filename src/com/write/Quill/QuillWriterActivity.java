@@ -85,8 +85,8 @@ import android.widget.ProgressBar;
 import android.widget.SpinnerAdapter;
 import android.widget.Toast;
 import android.widget.ToggleButton;
-import yuku.ambilwarna.AmbilWarnaDialog;
-import yuku.ambilwarna.AmbilWarnaDialog.OnAmbilWarnaListener;
+//import yuku.ambilwarna.AmbilWarnaDialog;
+//import yuku.ambilwarna.AmbilWarnaDialog.OnAmbilWarnaListener;
 
 
 public class QuillWriterActivity 
@@ -216,7 +216,11 @@ public class QuillWriterActivity
         		}};
     		return dialogThickness.create(this, listener);
     	case DIALOG_COLOR:
-   		return (Dialog)create_dialog_color();
+   		    listener = new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int i) {
+                }};
+            return dialogThickness.create(this, listener);
+            //return (Dialog)create_dialog_color();
     	case DIALOG_PAPER_ASPECT:
 			listener = new DialogInterface.OnClickListener() {
 	    		public void onClick(DialogInterface dialog, int i) {
@@ -283,8 +287,8 @@ public class QuillWriterActivity
 		}
     }
 
-    private Dialog create_dialog_color() {
-        AmbilWarnaDialog dlg = new AmbilWarnaDialog(QuillWriterActivity.this, mView.getPenColor(), 
+    //private Dialog create_dialog_color() {
+        /*AmbilWarnaDialog dlg = new AmbilWarnaDialog(QuillWriterActivity.this, mView.getPenColor(), 
         	new OnAmbilWarnaListener()
         	{	
         		@Override
@@ -296,7 +300,8 @@ public class QuillWriterActivity
         		}
         	});
         return dlg.getDialog();
-    }
+        */
+    //}
     
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
