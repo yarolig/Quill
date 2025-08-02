@@ -148,10 +148,10 @@ public class Page {
 	protected void setTransform(float dx, float dy, float s, Canvas canvas) {
 		float W = canvas.getWidth();
 		float H = canvas.getHeight();
-		dx = Math.min(dx, 2*W/3);
-		dx = Math.max(dx,   W/3 - s*aspect_ratio);
-		dy = Math.min(dy, 2*H/3);
-		dy = Math.max(dy,   H/3 - s);
+		dx = Math.min(dx, 2*W/3 + 5*W);
+		dx = Math.max(dx,   W/3 - s*aspect_ratio - 5*W);
+		dy = Math.min(dy, 2*H/3 + 5*H);
+		dy = Math.max(dy,   H/3 - s - 5*H);
 		setTransform(dx, dy, s);
 	}
 	

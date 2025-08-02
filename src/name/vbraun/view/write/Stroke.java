@@ -45,7 +45,7 @@ public class Stroke extends Graphics {
 	protected int pen_color = Color.BLACK;
 
 	// subsampling tolerance
-	private static final float EPSILON = 2e-4f;
+	private static final float EPSILON = 0.00002f;
 
 	/**
 	 * Constructor for pen stroke objects

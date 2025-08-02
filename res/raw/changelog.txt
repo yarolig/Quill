@@ -20,6 +20,13 @@
     </style>
   </head>
   <body>
+$ 10.8
+  % Version 10.8
+  _ 2025-08-02
+    * Swapped volume key navigation direction
+    * Increased image resolution to 4096x4096, change compression quality to 85
+    * More zoom, allow moving outside the page
+    * Unrestrict filter to record finer pen movement
 $ 10.7b
   % Version 10.7b
   _ 2025-08-01

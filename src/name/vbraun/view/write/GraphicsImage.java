@@ -356,7 +356,7 @@ public class GraphicsImage extends GraphicsControlpoint {
 		}
 	}
 
-	private final int IMAGE_MAX_SIZE = 1024;
+	private final int IMAGE_MAX_SIZE = 4096;
 
 	private void loadBitmap() throws IOException {
 		Assert.assertNotNull(file);

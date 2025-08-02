@@ -273,13 +273,13 @@ public class QuillWriterActivity
 		case KeyEvent.KEYCODE_VOLUME_UP:
 			if (!volumeKeyNavigation) return false;
 			if (action == KeyEvent.ACTION_UP) {
-				flip_page_next();
+				flip_page_prev();
 			}
 			return true;
 		case KeyEvent.KEYCODE_VOLUME_DOWN:
 			if (!volumeKeyNavigation) return false;
 			if (action == KeyEvent.ACTION_DOWN) {
-				flip_page_prev();
+				flip_page_next();
 			}
 			return true;
 		default:

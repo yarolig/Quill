@@ -19,6 +19,9 @@ import android.view.MotionEvent;
  */
 public abstract class TouchHandlerABC {
 
+	protected static final float minPageZoom = 0.2f;
+	protected static final float maxPageZoom = 50.0f;
+
 	protected HandwriterView view;
 
 	protected TouchHandlerABC(HandwriterView view) {
@@ -134,8 +137,8 @@ public abstract class TouchHandlerABC {
 		float H = view.canvas.getHeight();
 		float max_WH = Math.max(W, H);
 		float min_WH = Math.min(W, H);
-		new_page_scale = Math.min(new_page_scale, 5*max_WH);
-		new_page_scale = Math.max(new_page_scale, 0.4f*min_WH);
+		new_page_scale = Math.min(new_page_scale, maxPageZoom*max_WH);
+		new_page_scale = Math.max(new_page_scale, minPageZoom*min_WH);
 		scale = new_page_scale / page_scale;
 		// compute offset
 		float x0 = (oldX1 + oldX2)/2;

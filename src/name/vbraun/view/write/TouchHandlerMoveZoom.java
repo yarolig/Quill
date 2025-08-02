@@ -39,7 +39,7 @@ public class TouchHandlerMoveZoom extends TouchHandlerABC {
 		dy = newY1-newY2;
 		float new_distance = FloatMath.sqrt(dx*dx + dy*dy);
 		float scale = new_distance / old_distance;
-		if (scale < 0.1f || scale > 10f) {
+		if (scale < minPageZoom*0.9f || scale > maxPageZoom*1.1f) {
 			// Log.d("TAG", "ratio out of bounds "+new_distance);
 			return 1;
 		}
@@ -130,8 +130,8 @@ public class TouchHandlerMoveZoom extends TouchHandlerABC {
 			float H = view.canvas.getHeight();
 			float max_WH = Math.max(W, H);
 			float min_WH = Math.min(W, H);
-			new_page_scale = Math.min(new_page_scale, 5*max_WH);
-			new_page_scale = Math.max(new_page_scale, 0.4f*min_WH);
+			new_page_scale = Math.min(new_page_scale, maxPageZoom*max_WH);
+			new_page_scale = Math.max(new_page_scale, minPageZoom*min_WH);
 			scale = new_page_scale / page_scale;
 			// compute offset
 			float x0 = (oldX1 + oldX2)/2;

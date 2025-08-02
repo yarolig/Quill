@@ -26,7 +26,7 @@ import android.util.Log;
 public class Util {
 	private static final String TAG = "Util";
 	
-	public final static int IMAGE_MAX_SIZE = 2048;
+	public final static int IMAGE_MAX_SIZE = 4096;
 
 	public static int scalePow2(int height, int width) {
         int scale = 1;

@@ -39,7 +39,7 @@ public class ThreadSave extends ThreadBase {
 
 		OutputStream out = openOutput();
         try {
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 80, out);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 85, out);
         } catch (Exception e) {
             Log.e(TAG, "Compression and/or save failed. " + e.getMessage());
         }
